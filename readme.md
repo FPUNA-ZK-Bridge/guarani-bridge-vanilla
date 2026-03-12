@@ -1,5 +1,20 @@
 # Guarani Bridge 🌉
 
+
+# Local (default)
+  BRIDGE_ENV=local
+  npm run node:n1          # terminal 1
+  npm run node:n2          # terminal 2
+  npm run deploy:n1        # deploya a localN1 automáticamente
+  npm run deploy:n2        # deploya a localN2 automáticamente
+  npm run relayer
+
+  # Testnet
+  # Cambiar BRIDGE_ENV=testnet en .env y completar las PKs
+  npm run deploy:n1        # deploya a ephemery
+  npm run deploy:n2        # deploya a blockdag
+  npm run relayer
+
 Un puente de tokens descentralizado que permite transferir **GuaraniTokens** entre dos cadenas de bloques (L1 ↔ L2) de forma segura y eficiente. Implementa el patrón **lock-and-mint** con protección contra replay attacks y verificación criptográfica.
 
 ## ✨ Características Principales

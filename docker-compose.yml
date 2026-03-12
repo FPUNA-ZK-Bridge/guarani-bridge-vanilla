@@ -54,6 +54,7 @@ services:
       - guarani-network
     environment:
       - NODE_ENV=production
+      - BRIDGE_ENV=local
       - RPC_URL_N1=http://hardhat-n1:8545
       - RPC_URL_N2=http://anvil-n2:9545
       - NODE_OPTIONS=--max-old-space-size=2048
