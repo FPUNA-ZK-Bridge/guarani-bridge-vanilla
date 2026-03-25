@@ -1,12 +1,11 @@
 {
   "mode": "ephemery",
   "l1": {
-    "network": "ephemery",
-    "chainId": 39438156,
-    "chainIdHex": "0x259c74c",
-    "rpc": "http://localhost:8545",
-    "token": "0x0f5D1ef48f12b6f691401bfe88c2037c690a6afe",
-    "sender": "0x90118d110B07ABB82Ba8980D1c5cC96EeA810d2C"
+    "chainId": 39438157,
+    "chainIdHex": "0x259c74d",
+    "rpc": "https://otter.bordel.wtf/erigon",
+    "token": "0x8464135c8F25Da09e49BC8782676a84730C318bC",
+    "sender": "0x71C95911E9a5D330f4D621842EC243EE1343292e"
   },
   "l2": {
     "network": "blockdag",
@@ -17,7 +16,6 @@
     "receiver": "0x1B098beD9F6F9117D955D1248c30D360C639192f"
   },
   "monitorAccounts": [
-    "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
-    "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+    "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
   ]
 }

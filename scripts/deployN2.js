@@ -2,6 +2,7 @@
 import hre from "hardhat";
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import "dotenv/config";
+import { isLocal } from "../bridge-env.js";
 
 function isSafeLocalRpcUrl(url) {
   if (!url) return false;

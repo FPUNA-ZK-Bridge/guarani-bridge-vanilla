@@ -3,9 +3,10 @@ import { existsSync, readFileSync, writeFileSync } from "fs";
 import { HDNodeWallet } from "ethers/wallet";
 import { Mnemonic } from "ethers";
 import "dotenv/config";
+import { isLocal } from "../bridge-env.js";
 
 function isLocalNetwork(name) {
-  return name.startsWith("local") || name.startsWith("docker") || name === "hardhat";
+  return isLocal() || name.startsWith("local") || name.startsWith("docker") || name === "hardhat";
 }
 
 function isSafeLocalRpcUrl(url) {

@@ -2,15 +2,16 @@
 import { ethers } from "ethers";
 import fs from "fs";
 import "dotenv/config";
+import { config as bridgeEnv, isLocal } from "../bridge-env.js";
 import accountManager from "../utils/accounts.js";
-import verificarFinal from "../prueba_circom/verificadorFinal.js";
+
+// RPCs resueltos desde bridge-env (override con env vars si están definidos)
+const RPC_URL_N1 = process.env.RPC_URL_N1 || bridgeEnv.n1.rpc;
+const RPC_URL_N2 = process.env.RPC_URL_N2 || bridgeEnv.n2.rpc;
+const PRIVATE_KEY_RELAYER = bridgeEnv.privateKeyRelayer || process.env.PRIVATE_KEY_RELAYER;
 
 const {
-  RPC_URL_N1,
-  RPC_URL_N2,
-  PRIVATE_KEY_RELAYER,
   START_BLOCK_N1 = 0,
-  // Optional fee overrides for N2 (useful on some non-Ethereum RPCs)
   N2_GAS_LIMIT,
   N2_GAS_PRICE_GWEI,
   N2_MAX_FEE_GWEI,
