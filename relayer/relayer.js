@@ -4,7 +4,6 @@ import fs from "fs";
 import "dotenv/config";
 import { config as bridgeEnv, isLocal } from "../bridge-env.js";
 import accountManager from "../utils/accounts.js";
-import verificarFinal from "../prueba_circom/verificadorFinal.js";
 
 // RPCs resueltos desde bridge-env (override con env vars si están definidos)
 const RPC_URL_N1 = process.env.RPC_URL_N1 || bridgeEnv.n1.rpc;
