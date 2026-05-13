@@ -375,12 +375,6 @@
         await tx.wait(2); log("approve ok");
       }
 
-      // const proofOk = await verificarFinal();
-      // if (!proofOk) {
-      //   throw new Error("Proof inválido");
-      // }
-      // console.log("✅ Proof verificado OK");
-
       log("lock\u2026");
       const tx2 = await sender.lock(dest, amount);
       await tx2.wait();

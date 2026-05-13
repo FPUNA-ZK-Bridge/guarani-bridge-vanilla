@@ -9,7 +9,6 @@
     "compile": "hardhat compile",
     "deploy:n1": "hardhat run scripts/deployN1.js --network $(node scripts/resolve-network.js n1)",
     "deploy:n2": "hardhat run scripts/deployN2.js --network $(node scripts/resolve-network.js n2)",
-    "config": "node scripts/generate-config.js",
     "relayer": "node relayer/relayer.js",
     "frontend": "npx serve public",
     "test": "hardhat test --network localL1",

@@ -61,9 +61,6 @@ const signerN2 = PRIVATE_KEY_RELAYER
 : accountManager.getRelayerSigner(RPC_URL_N2);
 
 
-
-
-
 /* ---------- contratos ---------- */
 const senderAbi = [
     {
@@ -410,14 +407,6 @@ const handleLockedEvent = async (id, from, to, amount, retries = 3) => {
 
 // Event listener mejorado con manejo de errores
 try {
-
-
-  // const proofOk = await verificarFinal();
-  // if (!proofOk) {
-  //   throw new Error("Proof inválido");
-  // }
-  // console.log("✅ Proof verificado OK");
-
   // En algunos RPC HTTP (o nodos con filtros efímeros) `eth_newFilter/eth_getFilterChanges`
   // puede fallar con "filter not found". Para hacerlo robusto:
   // - si N1 es WS, usamos subscriptions

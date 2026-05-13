@@ -19,9 +19,6 @@ cache/
 deps/
 states/
 
-# Config auto-generada
-public/config.js
-
 # Environment variables
 .env
 .env.local

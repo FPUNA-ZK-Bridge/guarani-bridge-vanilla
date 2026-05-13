@@ -97,9 +97,10 @@ npm run relayer
 ### Frontend *(opcional, ambos entornos)*
 
 ```bash
-npm run config           # genera config del frontend desde deploy-*.json
 npm run frontend         # http://localhost:3000
 ```
+
+> El frontend lee `public/bridge-config.json`, que es regenerado automáticamente por `deploy:n1` y `deploy:n2`.
 
 ---
 
@@ -200,9 +201,8 @@ docker compose up -d relayer frontend
 | `GuaraniToken.sol` | Token ERC20 con mint/burn y roles |
 | `Sender.sol` | Bloquea tokens en L1, emite evento `Locked` |
 | `Receiver.sol` | Acuña tokens en L2 tras verificación del relayer |
-| `Verifier.sol` | Verificación criptográfica adicional *(opcional, placeholder en esta versión)* |
 
-> 💡 En la versión ZK, `Verifier.sol` es un `Groth16Verifier.sol` real generado por `snarkjs`. Acá está como placeholder para mantener una API similar entre ambas versiones del bridge.
+> 💡 En [`zk-guarani-bridge`](https://github.com/FPUNA-ZK-Bridge/zk-guarani-bridge) se agrega un `Groth16Verifier.sol` real generado por `snarkjs` que `Receiver` invoca antes de mintear.
 
 ---
 
@@ -231,7 +231,6 @@ npm run compile          # Compilar contratos
 npm run deploy:n1        # Deploy en N1 (según BRIDGE_ENV)
 npm run deploy:n2        # Deploy en N2 (según BRIDGE_ENV)
 npm run relayer          # Iniciar relayer
-npm run config           # Generar config del frontend
 npm run frontend         # Servidor frontend en :3000
 
 npm test                 # Todos los tests
@@ -285,7 +284,7 @@ guarani-bridge-vanilla/
 | `Contract not found` en el frontend | Los contratos no están desplegados | Ejecutar `npm run deploy:n1` y `npm run deploy:n2` |
 | `Internal JSON-RPC error` en MetaMask | Nonce desincronizado o sin tokens | Reset account en MetaMask y/o mintear tokens |
 | Relayer no procesa eventos | Direcciones desactualizadas en `deploy-*.json` | Re-deployar y reiniciar el relayer |
-| `Frontend: Contract not found` tras re-deploy | Falta regenerar config del frontend | Ejecutar `npm run config` |
+| `Frontend: Contract not found` tras re-deploy | `public/bridge-config.json` desactualizado | Re-ejecutar `npm run deploy:n1` y `npm run deploy:n2` (regeneran el config) |
 
 ---
 
