@@ -38,6 +38,7 @@ pids
 
 # Coverage directory used by tools like istanbul
 coverage/
+coverage.json
 *.lcov
 
 # TypeScript
@@ -67,3 +68,6 @@ deployments/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Mutation testing report
+mutation-report.json

@@ -15,11 +15,15 @@
     "test:bridge": "hardhat test test/Bridge.test.js --network localL1",
     "test:infra": "hardhat test test/Infrastructure.test.js --network localL1",
     "test:diagnostic": "hardhat test test/NetworkDiagnostic.test.js",
-    "test:all": "hardhat test test/Bridge.test.js test/Infrastructure.test.js --network localL1"
+    "test:all": "hardhat test test/Bridge.test.js test/Infrastructure.test.js --network localL1",
+    "test:unit": "hardhat test test/Unit.test.js",
+    "coverage": "hardhat coverage --testfiles 'test/Unit.test.js' --solcoverjs ./.solcover.cjs",
+    "mutation": "node scripts/mutation-test.js"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
-    "hardhat": "^2.22.2"
+    "hardhat": "^2.22.2",
+    "solidity-coverage": "^0.8.16"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.2",
